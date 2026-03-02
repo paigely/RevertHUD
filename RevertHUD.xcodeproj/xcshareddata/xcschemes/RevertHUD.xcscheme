@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "2610"
+   version = "1.7">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "killall $PRODUCT_NAME || true&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "A239A5812E9C2D6100EEC2F3"
+                     BuildableName = "RevertHUD.app"
+                     BlueprintName = "RevertHUD"
+                     ReferencedContainer = "container:RevertHUD.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "#!/bin/bash&#10;if [ -d &quot;/opt/homebrew/bin&quot; ]; then&#10;&#9;PATH=&quot;/opt/homebrew/bin:$PATH&quot;&#10;elif [ -d &quot;/usr/local/bin&quot; ]; then&#10;&#9;PATH=&quot;/usr/local/bin:$PATH&quot;&#10;fi&#10;&#10;if command -v brew &gt;/dev/null 2&gt;&amp;1; then&#10;&#9;if brew list --formula | grep -q &apos;^tccutil$&apos;; then&#10;&#9;&#9;tccutil -v \&#10;&#9;&#9;&#9;-r &quot;$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app&quot; \&#10;&#9;&#9;&#9;-i &quot;$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app&quot; \&#10;&#9;&#9;&#9;-e &quot;$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app&quot; \&#10;&#9;&#9;&#9;-u || true&#10;&#9;fi&#10;fi&#10;"
+               shellToInvoke = "/bin/bash">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "A239A5812E9C2D6100EEC2F3"
+                     BuildableName = "RevertHUD.app"
+                     BlueprintName = "RevertHUD"
+                     ReferencedContainer = "container:RevertHUD.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A239A5812E9C2D6100EEC2F3"
+               BuildableName = "RevertHUD.app"
+               BlueprintName = "RevertHUD"
+               ReferencedContainer = "container:RevertHUD.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A239A5812E9C2D6100EEC2F3"
+            BuildableName = "RevertHUD.app"
+            BlueprintName = "RevertHUD"
+            ReferencedContainer = "container:RevertHUD.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A239A5812E9C2D6100EEC2F3"
+            BuildableName = "RevertHUD.app"
+            BlueprintName = "RevertHUD"
+            ReferencedContainer = "container:RevertHUD.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
